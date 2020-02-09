@@ -62,8 +62,26 @@ elif f == 2:
     koch(n, a)
 
     main()
+elif f == 7:
+    def mink(order, size):
+        if order == 1:
+            forward(size)
+
+        else:
+            mink(order - 1, size / 2)
+            right(90)
+            mink(order - 1, size / 2)
+            left(90)
+
+
+    # нужно сделать нормальный угол
+    order = int(input('Глубина рекурсии:'))
+    size = int(input('Глубина рекурсии:'))
+
+    mink(order, size)
+
 elif f == 9:
-    
+
     def tree(order, size):
         if order >= 1:
             forward(order * 10)
@@ -86,7 +104,7 @@ elif f == 9:
         tree(order, size)
 
 
-    order = int(input())
-    size = int(input())
+    order = int(input('Глубина рекурсии:'))
+    size = int(input('Глубина рекурсии:'))
 
     main()
