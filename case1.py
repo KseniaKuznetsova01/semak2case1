@@ -62,3 +62,31 @@ elif f == 2:
     koch(n, a)
 
     main()
+elif f == 9:
+    
+    def tree(order, size):
+        if order >= 1:
+            forward(order * 10)
+            right(30)
+            tree(order * 0.75, size / 4)
+            left(60)
+            tree(order * 0.75, size / 4)
+            right(30)
+            bk(order * 10)
+        else:
+            forward(size)
+
+
+    def main():
+        left(90)
+        speed(10)
+        up()
+        goto(0, -100)
+        down()
+        tree(order, size)
+
+
+    order = int(input())
+    size = int(input())
+
+    main()
