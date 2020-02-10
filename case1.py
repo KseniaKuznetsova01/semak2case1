@@ -62,6 +62,53 @@ elif f == 2:
     koch(n, a)
 
     main()
+elif f == 4:
+    def snow_1(order, size):
+        if order == 1:
+            forward(size)
+
+        else:
+            snow_1(order - 1, size / 2)
+            left(90)
+            snow_1(order - 1, size / 4)
+            right(180)
+            snow_1(order - 1, size / 4)
+            left(90)
+            snow_1(order - 1, size / 2)
+
+    order = int(input('Глубина рекурсии:'))
+    size = int(input('Длина стороны:'))
+
+    snow_1(order, size)
+
+elif f == 6:
+    def snow_1(order, size):
+        if order == 1:
+            forward(size)
+
+        else:
+            snow_1(order - 1, size / 2)
+            left(90)
+            snow_1(order - 1, size / 4)
+            right(180)
+            snow_1(order - 1, size / 4)
+            left(90)
+            snow_1(order - 1, size / 2)
+
+
+    def snowflake(order, size):
+        for i in range(8):
+            snow_1(order, size)
+            right(180)
+            snow_1(order, size)
+            right(45)
+            snow_1(order, size)
+
+
+    order = int(input('Глубина рекурсии:'))
+    size = int(input('Длина стороны:'))
+    snowflake(order, size)
+
 elif f == 7:
     def mink(order, size):
         if order == 1:
@@ -73,8 +120,6 @@ elif f == 7:
             mink(order - 1, size / 2)
             left(90)
 
-
-    # нужно сделать нормальный угол
     order = int(input('Глубина рекурсии:'))
     size = int(input('Глубина рекурсии:'))
 
@@ -93,7 +138,6 @@ elif f == 9:
             bk(order * 10)
         else:
             forward(size)
-
 
     def main():
         left(90)
