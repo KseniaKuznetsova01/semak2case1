@@ -1,3 +1,5 @@
+#Panukova K. 83%
+#Kuznetsova K. 5%
 import turtle
 from turtle import *
 print('''Select a fractal:
